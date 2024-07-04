@@ -5,11 +5,9 @@
 // Generated on: 2024.07.03 at 04:49:44 PM ART 
 //
 
-
 package model;
 
-import jakarta.xml.bind.annotation.XmlRegistry;
-
+import javax.xml.bind.annotation.XmlRegistry;
 
 /**
  * This object contains factory methods for each 

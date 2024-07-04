@@ -1,6 +1,5 @@
 package repository;
 
-import jakarta.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,7 +12,7 @@ import org.springframework.util.Assert;
 public class CountryRepository {
 	private static final Map<String, Country> countries = new HashMap<>();
 
-	@PostConstruct
+	@javax.annotation.PostConstruct
 	public void initData() {
 		Country spain = new Country();
 		spain.setName("Spain");
