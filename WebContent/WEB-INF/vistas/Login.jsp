@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-    <form action="" method="get" id="form-login">
+    <form action="loginUser.html" method="get" id="form-login">
         <h1>Login</h1>
         <label for="txtUser">Usuario: <input type="text" name="txtUser" id="txtUser"></label>
         <label for="txtPassword">Contrasenia: <input type="text" name="txtPassword" id="txtPassword"></label>

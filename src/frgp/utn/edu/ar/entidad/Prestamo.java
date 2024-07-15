@@ -1,24 +1,49 @@
 package frgp.utn.edu.ar.entidad;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
 public class Prestamo {
+	@Id
     private int prestamoNumber;
     private Date date;
-    private String clientDNI;
-    private String clientName;
+    @ManyToOne(cascade= {CascadeType.ALL})
+	@JoinColumn(name="username")
+    private Usuario usuario;
     private double amount;
     private int totalInstallments;
-
-    public Prestamo(int prestamoNumber, Date date, String clientDNI, String clientName, double amount, int totalInstallments) {
+    
+    public Prestamo() {
+		// TODO Auto-generated constructor stub
+	}
+    
+    public Prestamo(int prestamoNumber, Date date, Usuario usuario, double amount, int totalInstallments) {
         this.prestamoNumber = prestamoNumber;
         this.date = date;
-        this.clientDNI = clientDNI;
-        this.clientName = clientName;
+        this.usuario = usuario;
         this.amount = amount;
         this.totalInstallments = totalInstallments;
     }
+    
+    
 
-    public int getPrestamoNumber() {
+    public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public int getPrestamoNumber() {
         return prestamoNumber;
     }
 
@@ -32,22 +57,6 @@ public class Prestamo {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public String getClientDNI() {
-        return clientDNI;
-    }
-
-    public void setClientDNI(String clientDNI) {
-        this.clientDNI = clientDNI;
-    }
-
-    public String getClientName() {
-        return clientName;
-    }
-
-    public void setClientName(String clientName) {
-        this.clientName = clientName;
     }
 
     public double getAmount() {

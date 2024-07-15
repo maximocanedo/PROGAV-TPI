@@ -1,12 +1,26 @@
 package frgp.utn.edu.ar.entidad;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+@Table(name = "Usuarios")
 public class Usuario {
+	@Id
     private String username;
     private String name;
     private String email;
     private String password;
     private boolean active;
     private String role;
+    
+    public Usuario() {
+		// TODO Auto-generated constructor stub
+	}
 
     public Usuario(String username, String name, String email, String password, boolean active, String role) {
         this.username = username;
