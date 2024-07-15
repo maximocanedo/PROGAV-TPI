@@ -13,7 +13,7 @@ import java.util.List;
 @Controller
 public class ControllerAdmin {
 	
-	//@GetMapping("/admin")
+	@RequestMapping("/admin")
     public String admin(Model model) {
 
         List<Usuario> usuarios = Arrays.asList(

@@ -32,8 +32,8 @@ public class ControladorCliente {
 		persona.setDni(txtDni);
 		persona.setNombre(txtNombre);
 		
-		boolean estado= negocioPersona.agregarPersona(persona);
-		String cartel="No se pudo agregar la persona";
+		boolean estado = negocioPersona.agregarPersona(persona);
+		String cartel = "No se pudo agregar la persona";
 		if(estado)
 		{
 			cartel="La persona ha sido agregada exitosamente";

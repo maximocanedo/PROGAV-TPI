@@ -17,6 +17,10 @@
 	<input type="submit" name="btnAgregarPersona" value="Aceptar">
 </form>
 
+<form action="login.html" method="get">
+	<input type="submit" value="Ir Login">
+</form>
+
 ${estadoAgregarPersona}
 
 </body>

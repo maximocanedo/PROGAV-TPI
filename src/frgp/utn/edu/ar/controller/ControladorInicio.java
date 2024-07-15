@@ -15,4 +15,12 @@ public class ControladorInicio {
 		MV.setViewName("Inicio");
 		return MV;
 	}
+	
+	@RequestMapping("login.html")
+	public ModelAndView eventoRedireccionarLogin()
+	{
+		ModelAndView MV = new ModelAndView();
+		MV.setViewName("Login");
+		return MV;
+	}
 }
