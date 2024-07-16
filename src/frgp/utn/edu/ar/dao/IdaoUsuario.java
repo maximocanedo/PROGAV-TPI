@@ -8,4 +8,7 @@ public interface IdaoUsuario {
 	public List<Usuario> listarUsuarios();
 	public Usuario obtenerUsuario(int username);
 	public boolean agregarUsuario(Usuario user);
+	public Usuario findById(int id);
+	public void deleteById(int id);
+	public List<Usuario> buscarUsuarios(String nombre, String apellido);
 }

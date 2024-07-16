@@ -8,4 +8,8 @@ public interface InegUsuario {
 	public List<Usuario> listarUsuarios();
 	public Usuario obtenerUsuario(int username);
 	public boolean agregarUsuario(Usuario user);
+    Usuario obtenerUsuarioPorId(int id);
+    List<Usuario> buscarUsuarios(String nombre, String apellido);
+    void eliminarUsuario(int id);
+
 }
