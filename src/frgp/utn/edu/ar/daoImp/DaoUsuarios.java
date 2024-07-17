@@ -13,6 +13,7 @@ import frgp.utn.edu.ar.dao.IdaoUsuario;
 import frgp.utn.edu.ar.entidad.Usuario;
 
 
+@Deprecated
 @Repository("daoUsuarios")
 public class DaoUsuarios implements IdaoUsuario {
 	@Autowired

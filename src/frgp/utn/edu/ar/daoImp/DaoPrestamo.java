@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import frgp.utn.edu.ar.dao.IdaoPrestamo;
 import frgp.utn.edu.ar.entidad.Prestamo;
 
+@Deprecated
 @Repository("daoPrestamo")
 public class DaoPrestamo implements IdaoPrestamo {
 	@Autowired

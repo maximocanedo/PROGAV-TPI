@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import frgp.utn.edu.ar.dao.IdaoPersona;
 import frgp.utn.edu.ar.entidad.Persona;
 
+@Deprecated
 @Repository("daoPersona")
 public class DaoPersona implements IdaoPersona {
 	

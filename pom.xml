@@ -11,7 +11,6 @@
 		<spring.version>5.0.0.RELEASE</spring.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -57,6 +56,14 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>3.3.2</version>
+		</dependency>
+		
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>

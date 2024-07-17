@@ -7,6 +7,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 import org.springframework.stereotype.Repository;
 
+@Deprecated
 @Repository
 public class Conexion {
 

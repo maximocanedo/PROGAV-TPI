@@ -4,6 +4,7 @@ import java.util.List;
 
 import frgp.utn.edu.ar.entidad.Persona;
 
+@Deprecated
 public interface InegPersona {
 
 	public List<Persona> listarPersonas();

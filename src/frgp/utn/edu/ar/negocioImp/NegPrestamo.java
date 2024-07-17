@@ -9,6 +9,7 @@ import frgp.utn.edu.ar.dao.IdaoPrestamo;
 import frgp.utn.edu.ar.entidad.Prestamo;
 import frgp.utn.edu.ar.negocio.InegPrestamo;
 
+@Deprecated
 @Service("servicioPrestamo")
 public class NegPrestamo implements InegPrestamo{
 	

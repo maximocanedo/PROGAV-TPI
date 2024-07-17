@@ -9,6 +9,7 @@ import frgp.utn.edu.ar.dao.IdaoUsuario;
 import frgp.utn.edu.ar.entidad.Usuario;
 import frgp.utn.edu.ar.negocio.InegUsuario;
 
+@Deprecated
 @Service("servicioUsuario")
 public class NegUsuario implements InegUsuario {
 	

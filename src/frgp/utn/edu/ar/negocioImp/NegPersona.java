@@ -9,6 +9,7 @@ import frgp.utn.edu.ar.dao.IdaoPersona;
 import frgp.utn.edu.ar.entidad.Persona;
 import frgp.utn.edu.ar.negocio.InegPersona;
 
+@Deprecated
 @Service("servicioPersona")
 public class NegPersona implements InegPersona {
 
