@@ -22,13 +22,13 @@ public class NegUsuario implements InegUsuario {
 	}
 
 	@Override
-	public Usuario obtenerUsuario(int username) {
+	public Usuario obtenerUsuario(String username) {
 		// TODO Auto-generated method stub
 		return daoUsuarios.obtenerUsuario(username);
 	}
 
 	@Override
-	public boolean agregarUsuario(Usuario user) {
+	public Usuario agregarUsuario(Usuario user) {
 		// TODO Auto-generated method stub
 		return daoUsuarios.agregarUsuario(user);
 	}

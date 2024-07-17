@@ -30,27 +30,28 @@ public class DaoUsuarios implements IdaoUsuario {
 	}
 
 	@Override
-	public Usuario obtenerUsuario(int username) {
-		// TODO Auto-generated method stub
-		return null;
+	public Usuario obtenerUsuario(String username) {
+		Session session = conexion.abrirConexion();
+	    Query query = session.createQuery("SELECT u from Usuario u WHERE u.username = :username");
+	    query.setParameter("username", username);
+	    Usuario u = (Usuario) query.uniqueResult();
+	    if(u == null) throw new Error("Not found. ");
+		return u;
 	}
 
 	@Override
-	public boolean agregarUsuario(Usuario user) {
+	public Usuario agregarUsuario(Usuario user) {
 		Session session = conexion.abrirConexion();
 		Transaction tx= session.beginTransaction();
-		boolean aux = true;
-		try
-		{
+		try {
 			session.save(user); 
 			tx = session.getTransaction();
 			tx.commit();
-		}
-		catch (Exception e) {
-			aux=false;
+		} catch (Exception e) {
 			tx.rollback();
+			throw new Error("No se pudo agregar el usuario. ");
 		}
 		conexion.cerrarSession();
-		return true;
+		return user;
 	}
 }
