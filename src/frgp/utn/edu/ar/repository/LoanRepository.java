@@ -1,12 +1,12 @@
-package frgp.utn.edu.ar.repositories;
+package frgp.utn.edu.ar.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import frgp.utn.edu.ar.entidad.Prestamo;
+import frgp.utn.edu.ar.model.Loan;
 
 @Repository
-public interface LoanRepository extends JpaRepository<Prestamo, Integer> {
+public interface LoanRepository extends JpaRepository<Loan, Integer> {
 	/**
 	 * Los métodos CRUD y de listado básicos ya están incluídos en {@link JpaRepository}.
 	 * Los repositorios no se deben implementar manualmente.

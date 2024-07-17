@@ -1,16 +1,15 @@
 package frgp.utn.edu.ar.principal;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
+@SpringBootApplication
+@ComponentScan("frgp.utn.edu.ar")
 public class Main {
 
 	public static void main(String[] args) {
-
-	/*	ApplicationContext appContext = new 
-				ClassPathXmlApplicationContext("frgp/utn/edu/ar/resources/beans1.xml");
-		Persona m1 = (Persona) appContext.getBean("PersonaPepe");
-		//Mundo m = (Mundo)appContext.getBean(Mundo.class);
-		System.out.println( m1.toString());
-		*/
+		SpringApplication.run(Main.class, args);
 	}
 
 }

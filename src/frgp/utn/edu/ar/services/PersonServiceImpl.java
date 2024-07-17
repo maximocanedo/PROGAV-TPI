@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import frgp.utn.edu.ar.entidad.Persona;
-import frgp.utn.edu.ar.repositories.PersonRepository;
+import frgp.utn.edu.ar.model.Person;
+import frgp.utn.edu.ar.repository.PersonRepository;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -15,12 +15,12 @@ public class PersonServiceImpl implements PersonService {
 	private PersonRepository repository;
 
 	@Override
-	public List<Persona> listarPersonas() {
+	public List<Person> listarPersonas() {
 		return repository.findAll();
 	}
 
 	@Override
-	public Persona agregarPersona(Persona p) {
+	public Person agregarPersona(Person p) {
 		return repository.saveAndFlush(p);
 	}
 	

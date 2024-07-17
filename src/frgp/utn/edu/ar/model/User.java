@@ -1,4 +1,4 @@
-package frgp.utn.edu.ar.entidad;
+package frgp.utn.edu.ar.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 @Table(name = "Usuarios")
-public class Usuario {
-	@Id
+public class User {
+	
     private String username;
     private String name;
     private String email;
@@ -18,11 +18,11 @@ public class Usuario {
     private boolean active;
     private String role;
     
-    public Usuario() {
+    public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-    public Usuario(String username, String name, String email, String password, boolean active, String role) {
+    public User(String username, String name, String email, String password, boolean active, String role) {
         this.username = username;
         this.name = name;
         this.email = email;
@@ -31,6 +31,7 @@ public class Usuario {
         this.role = role;
     }
 
+    @Id
     public String getUsername() {
         return username;
     }

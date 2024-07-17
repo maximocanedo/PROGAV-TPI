@@ -2,14 +2,12 @@ package frgp.utn.edu.ar.services;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
+import frgp.utn.edu.ar.model.Person;
 
-import frgp.utn.edu.ar.entidad.Persona;
 
-@Service
 public interface PersonService {
 	
-	public List<Persona> listarPersonas();
+	public List<Person> listarPersonas();
 	
-	public Persona agregarPersona(Persona p);
+	public Person agregarPersona(Person p);
 }

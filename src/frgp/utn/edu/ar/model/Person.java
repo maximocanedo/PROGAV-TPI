@@ -1,4 +1,4 @@
-package frgp.utn.edu.ar.entidad;
+package frgp.utn.edu.ar.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-public class Persona {
+public class Person {
 
 	@Id
 	private int dni;
@@ -20,6 +20,7 @@ public class Persona {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
 	public String getApellido() {
 		return apellido;
 	}
@@ -34,7 +35,7 @@ public class Persona {
 	}
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
+		return "Person [nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
 	}
 	
 }

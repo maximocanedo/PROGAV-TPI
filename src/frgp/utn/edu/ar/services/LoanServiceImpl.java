@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import frgp.utn.edu.ar.entidad.Prestamo;
-import frgp.utn.edu.ar.repositories.LoanRepository;
+import frgp.utn.edu.ar.model.Loan;
+import frgp.utn.edu.ar.repository.LoanRepository;
 
 @Service
 public class LoanServiceImpl implements LoanService {
@@ -15,7 +15,7 @@ public class LoanServiceImpl implements LoanService {
 	private LoanRepository repository;
 
 	@Override
-	public List<Prestamo> listarPrestamos() {
+	public List<Loan> listarPrestamos() {
 		return repository.findAll();
 	}
 
