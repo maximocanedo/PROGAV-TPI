@@ -8,9 +8,4 @@ import frgp.utn.edu.ar.model.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 	
-	/** 
-	 * Las operaciones CRUD y listado básico están incluídas en {@link JpaRepository}. 
-	 * Los repositorios no se implementan.
-	 */
-	
 }

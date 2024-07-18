@@ -7,8 +7,5 @@ import frgp.utn.edu.ar.model.Loan;
 
 @Repository
 public interface LoanRepository extends JpaRepository<Loan, Integer> {
-	/**
-	 * Los métodos CRUD y de listado básicos ya están incluídos en {@link JpaRepository}.
-	 * Los repositorios no se deben implementar manualmente.
-	 */
+	
 }
