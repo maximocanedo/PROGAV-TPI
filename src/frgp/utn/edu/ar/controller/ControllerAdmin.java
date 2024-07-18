@@ -12,7 +12,7 @@ import java.util.List;
 @Controller
 public class ControllerAdmin {
 	
-	@RequestMapping("/admin")
+	@RequestMapping("/admin.html")
     public String admin(Model model) {
 
         List<User> usuarios = Arrays.asList(

@@ -3,6 +3,10 @@ package frgp.utn.edu.ar.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +15,7 @@ import frgp.utn.edu.ar.model.User;
 import frgp.utn.edu.ar.repository.UserRepository;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 	
 	@Autowired
 	private UserRepository repository;
@@ -38,10 +42,10 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	/**
-	 * Únicamente valida usuario y clave. NO incluye ningún tipo de tokens. 
+	 * ï¿½nicamente valida usuario y clave. NO incluye ningï¿½n tipo de tokens. 
 	 * @param username Nombre de usuario.
-	 * @param password Contraseña. 
-	 * @return User en cuestión, si el usuario y clave son correctos.
+	 * @param password Contraseï¿½a. 
+	 * @return User en cuestiï¿½n, si el usuario y clave son correctos.
 	 */
 	public User login(String username, String password) {
 		Optional<User> user = repository.findById(username);
@@ -49,6 +53,20 @@ public class UserServiceImpl implements UserService {
 		if(!BCrypt.checkpw(password, user.get().getPassword())) 
 			throw new Error("Invalid credentials");
 		return user.get();
+	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = repository.findById(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return new org.springframework.security.core.userdetails.User(
+            user.getUsername(),
+            user.getPassword(),
+            user.isActive(),
+            true,
+            true,
+            true,
+            AuthorityUtils.createAuthorityList(user.getRole())
+        );
 	}
 
 }

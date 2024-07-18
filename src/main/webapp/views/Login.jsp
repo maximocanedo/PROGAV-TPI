@@ -14,11 +14,12 @@
 </style>
 </head>
 <body>
-    <form action="loginUser.html" method="get" id="form-login">
+    <form action="login.html" id="form-login">
         <h1>Login</h1>
         <label for="txtUser">Usuario: <input type="text" name="txtUser" id="txtUser"></label>
         <label for="txtPassword">Contrasenia: <input type="text" name="txtPassword" id="txtPassword"></label>
         <button type="submit" id="btnLogin" name="btnLogin">Ingresar</button>
     </form>
+    <br><br><p>${ok}</p>
 </body>
 </html>

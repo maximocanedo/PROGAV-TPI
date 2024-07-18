@@ -15,7 +15,7 @@ public class ControladorCliente {
 	private PersonService personService;
 	
 	
-	@RequestMapping("/clients/add")
+	@RequestMapping("/clients/add.html")
 	public ModelAndView eventoRedireccionarPag1(Integer txtDni,String txtNombre, String txtApellido)
 	{
 		ModelAndView MV = new ModelAndView();

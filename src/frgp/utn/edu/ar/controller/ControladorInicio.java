@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControladorInicio {
 
 	
-	@RequestMapping("/Inicio")
+	@RequestMapping("/home.html")
 	public ModelAndView eventoRedireccionarPag1()
 	{
 		ModelAndView MV = new ModelAndView();

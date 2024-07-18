@@ -29,7 +29,7 @@ public class WebConfig {
         applicationContext.setConfigLocation("frgp.utn.edu.ar.config");
 
         DispatcherServlet dispatcherServlet = new DispatcherServlet(applicationContext);
-        DispatcherServletRegistrationBean servletRegistrationBean = new DispatcherServletRegistrationBean(dispatcherServlet, "/*");
+        DispatcherServletRegistrationBean servletRegistrationBean = new DispatcherServletRegistrationBean(dispatcherServlet, "*.html");
         servletRegistrationBean.setLoadOnStartup(1);
         servletRegistrationBean.setName("spring");
 
