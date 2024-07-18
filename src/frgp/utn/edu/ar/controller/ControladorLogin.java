@@ -16,30 +16,20 @@ public class ControladorLogin {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private User usuario;
-	
-	@RequestMapping("loginUser.html")
-	public ModelAndView loguearse(String txtUser, String txtPassword) {
-		ModelAndView MV = new ModelAndView();
-		if (usuario.getRole() == "ADMIN") {
-			MV.setViewName("Clientes");
-		} else {
-			MV.setViewName("Prestamos");
-		}
-		return MV;
+	@RequestMapping("/login")
+	public ModelAndView loguearse() {
+		ModelAndView d = new ModelAndView();
+		d.setViewName("Login");
+		System.out.println("Login");
+		return d;
 	}
 	
-	@RequestMapping("listarUsuarios.html")
+	@RequestMapping("/listarUsuarios")
 	public ModelAndView listarPersonas(String txtUser, String txtPassword) {
 		ModelAndView MV = new ModelAndView();
-		try {
-			List<User> listaUsuarios = userService.listarUsuarios();
-			MV.addObject("listaUsuarios", listaUsuarios);
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		MV.setViewName("Login");
+		List<User> listaUsuarios = userService.listarUsuarios();
+		MV.addObject("listaUsuarios", listaUsuarios);
+		MV.setViewName("Clientes");
 		return MV;
 	}
 

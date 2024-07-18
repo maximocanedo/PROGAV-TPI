@@ -27,6 +27,7 @@ public class SecurityConfig { // extends WebSecurityConfiguration {
 					.antMatchers("/admin/**").hasRole("ADMIN")
 					.antMatchers("/client/**").hasRole("CLIENT")
 					.antMatchers("/login").permitAll()
+					.antMatchers("/**").permitAll()
 					.anyRequest().authenticated()
 			).formLogin(formLoginCustomizer -> 
 				formLoginCustomizer

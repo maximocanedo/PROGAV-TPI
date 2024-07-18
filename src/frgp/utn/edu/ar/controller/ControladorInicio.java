@@ -8,19 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class ControladorInicio {
 
 	
-	@RequestMapping("inicio.html")
+	@RequestMapping("/Inicio")
 	public ModelAndView eventoRedireccionarPag1()
 	{
 		ModelAndView MV = new ModelAndView();
 		MV.setViewName("Inicio");
-		return MV;
-	}
-	
-	@RequestMapping("login.html")
-	public ModelAndView eventoRedireccionarLogin()
-	{
-		ModelAndView MV = new ModelAndView();
-		MV.setViewName("Login");
 		return MV;
 	}
 }
