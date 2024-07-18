@@ -1,4 +1,4 @@
-package frgp.utn.edu.ar.principal;
+package frgp.utn.edu.ar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

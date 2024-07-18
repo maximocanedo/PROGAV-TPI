@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,7 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfiguration {
+public class SecurityConfig { // extends WebSecurityConfiguration {
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -25,23 +24,21 @@ public class SecurityConfig extends WebSecurityConfiguration {
     	http
 			.authorizeHttpRequests(authorizeHttpRequests ->
 				authorizeHttpRequests
-					.requestMatchers("/admin/**").hasRole("ADMIN")
-					.requestMatchers("/client/**").hasRole("CLIENT")
-					.requestMatchers("/login").permitAll()
+					.antMatchers("/admin/**").hasRole("ADMIN")
+					.antMatchers("/client/**").hasRole("CLIENT")
+					.antMatchers("/login").permitAll()
 					.anyRequest().authenticated()
 			).formLogin(formLoginCustomizer -> 
 				formLoginCustomizer
 					.loginPage("/login")
 					.defaultSuccessUrl("/", true)
-					.failureUrl("/login?error=true")
-					.permitAll()					
+					.failureUrl("/login?error=true")				
 			).logout(logoutCustomizer ->
 				logoutCustomizer
 					.logoutUrl("/logout")
 					.logoutSuccessUrl("/login?logout=true")
 					.invalidateHttpSession(true)
 					.deleteCookies("JSESSIONID")
-					.permitAll()
 			).sessionManagement(sessionManagementCustomizer -> 
 				sessionManagementCustomizer
 					.sessionFixation().migrateSession()
