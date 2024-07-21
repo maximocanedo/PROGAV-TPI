@@ -25,8 +25,8 @@ public class SecurityConfig {
     	http
     	.authorizeHttpRequests(authorize ->
     			authorize
-    			.antMatchers("/clients/**").hasAnyRole("CLIENT")
-    			.antMatchers("/admin/**").hasAnyRole("ADMIN")
+    			.antMatchers("/cliente/Prestamos.jsp").hasAnyRole("CLIENT")
+    			.antMatchers("/admin/Clientes.jsp").hasAnyRole("ADMIN")
     			.anyRequest().authenticated())
     	.formLogin()
     	.and().logout()
