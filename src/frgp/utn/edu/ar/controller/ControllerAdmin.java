@@ -3,6 +3,7 @@ package frgp.utn.edu.ar.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import frgp.utn.edu.ar.model.User;
 
@@ -12,9 +13,10 @@ import java.util.List;
 @Controller
 public class ControllerAdmin {
 	
-	@RequestMapping("/admin.html")
-    public String admin(Model model) {
-
+	@RequestMapping("/admin/clients.html")
+	public ModelAndView eventoRedireccionarClientes(Model model)
+	{
+		ModelAndView MV = new ModelAndView();
         List<User> usuarios = Arrays.asList(
                 new User("admin1", "Admin Uno", "admin1@utn.com", "adminpass1", true, "ADMIN"),
                 new User("admin2", "Admin Dos", "admin2@utn.com", "adminpass2", true, "ADMIN"),
@@ -25,6 +27,7 @@ public class ControllerAdmin {
         );
         
         model.addAttribute("usuarios", usuarios);
-        return "admin";
+        MV.setViewName("admin/Clientes");
+		return MV;
     }
 }

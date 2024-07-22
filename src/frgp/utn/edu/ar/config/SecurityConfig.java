@@ -1,5 +1,6 @@
 package frgp.utn.edu.ar.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -11,9 +12,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import frgp.utn.edu.ar.components.CustomAuthenticationSuccessHandler;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+	
+	@Autowired
+    private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
     
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -25,11 +31,13 @@ public class SecurityConfig {
     	http
     	.authorizeHttpRequests(authorize ->
     			authorize
-    			.antMatchers("/cliente/Prestamos.jsp").hasAnyRole("CLIENT")
-    			.antMatchers("/admin/Clientes.jsp").hasAnyRole("ADMIN")
+    			.antMatchers("/cliente/prestamos.html").hasAnyRole("CLIENT")
+    			.antMatchers("/admin/clients.html").hasAnyRole("ADMIN")
     			.anyRequest().authenticated())
-    	.formLogin()
-    	.and().logout()
+    	.formLogin(form -> 
+    		form.successHandler(customAuthenticationSuccessHandler)
+    	)
+    	.logout()
     	.and().sessionManagement();
     	return http.build();
     }

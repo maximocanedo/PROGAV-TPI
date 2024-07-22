@@ -19,7 +19,17 @@ public class Loan {
     private double amount;
     private int totalInstallments;
     
-    public Loan() { }  
+    
+    
+    public Loan(int id, Date date, User user, double amount) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.user = user;
+		this.amount = amount;
+	}
+
+	public Loan() { }  
     
 	@Id
 	public int getId() {
